@@ -1,0 +1,15 @@
+{
+  "name": "even_dfa",
+  "alphabet": ["0", "1"],
+  "start_state": "q0",
+  "states": [
+    {"id": "q0", "accepting": true},
+    {"id": "q1", "accepting": false}
+  ],
+  "transitions": [
+    {"from": "q0", "symbol": "0", "to": "q1"},
+    {"from": "q0", "symbol": "1", "to": "q0"},
+    {"from": "q1", "symbol": "0", "to": "q0"},
+    {"from": "q1", "symbol": "1", "to": "q1"}
+  ]
+}
