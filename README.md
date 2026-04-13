@@ -6,7 +6,7 @@ Estructuras Discretas
 ## Integrantes
 - Adrian Muñoz
 - Marco Vinicio Coto Dall' Anesse
-- Gabriel
+- Gabriel Chavarria Barquero
 
 ---
 
