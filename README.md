@@ -7,6 +7,7 @@ Estructuras Discretas
 - Adrian Muñoz
 - Marco Vinicio Coto Dall' Anesse
 - Gabriel Chavarria Barquero
+- Joao Arauz Rodriguez
 
 ---
 
