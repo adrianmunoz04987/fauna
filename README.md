@@ -5,7 +5,7 @@ Estructuras Discretas
 
 ## Integrantes
 - Adrian Muñoz
-- Marco
+- Marco Vinicio Coto Dall' Anesse
 - Gabriel
 
 ---
