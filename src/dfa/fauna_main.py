@@ -1,3 +1,15 @@
+"""
+EIF203 Estructuras Discretas - Semestre I, 2026
+Universidad Nacional
+
+Autores:
+   Adrian Muñoz Cisneros
+   Marco Vinicio Coto Dall' Anesse
+   Gabriel Chavarria Barquero
+   Joao Arauz Rodriguez
+"""
+
+
 import json
 import sys
 from graphviz import Digraph
