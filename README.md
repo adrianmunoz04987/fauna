@@ -44,3 +44,6 @@ os.environ["PATH"] += os.pathsep + r"C:\Program Files\Graphviz\bin"
 
 Ejecutar el programa
 python src\dfa\fauna_main.py examples\dfa2.json
+
+Resultado si todo salio bien:
+Al final se genera una imagen automata .png
