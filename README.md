@@ -21,10 +21,21 @@ El programa toma los estados, el estado inicial, los estados de aceptación y la
 
 ## Cómo ejecutar
 
-1. Abrir la carpeta del proyecto
+1. Descargar o abrir el proyecto
 
-2. Crear entorno virtual:
+Primero asegúrate de tener la carpeta del proyecto (fauna) en tu computadora.
 
-```bash
+2. Abrir la carpeta en la terminal
+
+Puedes abrir la carpeta y en la barra escribir cmd para abrir la terminal directamente ahí.
+
+3. Crear el entorno virtual
 python -m venv venv
+4. Activar el entorno
 venv\Scripts\activate
+5. Instalar dependencias
+pip install -r requirements.txt
+6. Instalar Graphviz (importante)
+
+Además de lo anterior, hay que instalar Graphviz en la computadora.
+Si no, el programa no va a poder generar la imagen.
