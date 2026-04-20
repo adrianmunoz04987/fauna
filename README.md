@@ -4,7 +4,7 @@
 Estructuras Discretas
 
 ## Integrantes
-- Adrian Muñoz
+- Adrian Muñoz Cisneros
 - Marco Vinicio Coto Dall' Anesse
 - Gabriel Chavarria Barquero
 - Joao Arauz Rodriguez
