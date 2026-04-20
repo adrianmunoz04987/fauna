@@ -1,7 +1,8 @@
 # Proyecto DFA - FAuna
 
 ## Curso
-Estructuras Discretas
+EIF 203 Estructuras Discretas - Semestre I, 2026
+Universidad Nacional
 
 ## Integrantes
 - Adrian Muñoz Cisneros
