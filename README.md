@@ -29,11 +29,11 @@ Primero asegúrate de tener la carpeta del proyecto (fauna) en tu computadora.
 
 Puedes abrir la carpeta y en la barra escribir cmd para abrir la terminal directamente ahí.
 
-3. Crear el entorno virtual
+3. Crear el entorno virtual: 
 python -m venv venv
-4. Activar el entorno
+4. Activar el entorno: 
 venv\Scripts\activate
-5. Instalar dependencias
+5. Instalar dependencias: 
 pip install -r requirements.txt
 6. Instalar Graphviz (importante)
 
