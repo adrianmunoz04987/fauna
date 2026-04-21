@@ -14,6 +14,7 @@ import json
 import sys
 from graphviz import Digraph
 from model import State, Transition, DFA
+from runner import run_dfa
 
 
 def load_dfa(path):
@@ -65,7 +66,7 @@ def save_graph(graph, json_path):
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
         print("Uso: python src\\dfa\\fauna_main.py <archivo_json>")
         return
 
@@ -73,6 +74,15 @@ def main():
     dfa = load_dfa(path)
     graph = build_graph(dfa)
     save_graph(graph, path)
+
+    if len(sys.argv) == 3:
+        cadena = sys.argv[2]
+        print(f"\nEjecutando DFA '{dfa.name}' con la cadena: '{cadena}'")
+        resultado = run_dfa(dfa, cadena)
+        if resultado:
+            print("Resultado: ACEPTADA")
+        else:
+            print("Resultado: RECHAZADA")
 
 
 if __name__ == "__main__":
