@@ -43,6 +43,7 @@ Se implementaron pruebas unitarias básicas para validar el funcionamiento del s
 ---
 
 ## Estructura del Proyecto
+```
 fauna-main/
 │
 ├── src/dfa/
@@ -66,7 +67,7 @@ fauna-main/
 │
 ├── README.md
 └── requirements.txt
-
+```
 
 ---
 
