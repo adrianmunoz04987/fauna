@@ -46,7 +46,7 @@ Lista de transiciones entre estados. Cada transición es un objeto con
 tres campos:
 
 - `from`: id del estado de origen.
-- `symbol`: símbolo del alfabeto que se ejecuta la transición.
+- `symbol`: símbolo del alfabeto que causa la transición.
 - `to`: id del estado de destino.
 
 Ejemplo:
