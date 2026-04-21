@@ -15,11 +15,12 @@ def run_dfa(dfa, cadena):
     estado_actual = dfa.start_state
 
     for simbolo in cadena: # Si el simbolo no esta en el alfabeto, la cadena es rechazada
-            print(f"  Simbolo '{simbolo}' no esta en el alfabeto.")
-            return False
-
+            if simbolo not in dfa.alphabet:
+               print(f"  Simbolo '{simbolo}' no esta en el alfabeto.")
+               return False
 
         siguiente = None
+
         for t in dfa.transitions: # Buscamos la transicion que corresponde al estado actual y al simbolo
             if t.from_state == estado_actual and t.symbol == simbolo:
                 siguiente = t.to_state
