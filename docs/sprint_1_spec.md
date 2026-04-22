@@ -62,6 +62,9 @@ fauna-main/
 │ ├── test_runner.py
 │ ├── test_visualization.py
 │
+├── html/
+│ └── fauna.html
+|
 ├── docs/
 │ └── sprint_1_spec.md
 │
