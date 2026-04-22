@@ -19,7 +19,7 @@ Nombre del DFA. Es una cadena de texto que se usa para identificarlo.
 Ejemplo: `"name": "ends_ab"`
 
 ### alphabet
-Lista de símbolos válidos que el DFA puede leer. Cada símbolo es un arco corto, usualmente de un solo carácter.
+Lista de símbolos válidos que el DFA puede leer. Cada símbolo es una cadena corta, usualmente de un solo carácter.
 
 Ejemplo: `"alphabet": ["a", "b"]`
 

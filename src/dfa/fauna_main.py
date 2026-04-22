@@ -9,9 +9,11 @@ Autores:
    Joao Arauz Rodriguez
 """
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import json
-import sys
 from graphviz import Digraph
 from model import State, Transition, DFA
 from runner import run_dfa
@@ -21,11 +23,11 @@ def load_dfa(path):
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    states = [] #Convierte los diccionarios de .jsn en objetos state
+    states = [] #Convierte los diccionarios de .json en objetos state
     for s in data["states"]:
         states.append(State(s["id"], s["accepting"]))
 
-    transitions = [] #Convierte los diccionarios de .jsn en objetos Transitions
+    transitions = [] #Convierte los diccionarios de .json en objetos Transitions
     for t in data["transitions"]:
         transitions.append(Transition(t["from"], t["symbol"], t["to"]))
 

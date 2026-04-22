@@ -31,7 +31,7 @@ class TestModel(unittest.TestCase):
 
         dfa = DFA(
             name="test",
-            alphabet={"a"},
+            alphabet=["a"],
             states=states,
             transitions=transitions,
             start_state="q0"

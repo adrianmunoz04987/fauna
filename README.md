@@ -20,6 +20,19 @@ El programa toma los estados, el estado inicial, los estados de aceptación y la
 
 ---
 
+### Uso de herramientas externas e IA
+
+### Librerías externas
+- graphviz: utilizada para generar la representación gráfica del DFA en formato PNG.
+
+### Uso de inteligencia artificial
+Se uso la IA como apoyo para el desarrollo de los siguientes aspectos del SPEC
+
+- Orientación sobre la distribución del código entre los distintos archivos del proyecto (`model.py`, `runner.py`, `fauna_main.py`, etc.), de acuerdo a la estructura solicitada en el SPEC.
+- Corrección de errores y dudas puntuales durante la implementación.
+
+El codigo fue totalmente comprendido por los integrantes del grupo y son capaces de defender la composicion del mismo.
+
 ## Cómo ejecutar
 
 Cómo ejecutar

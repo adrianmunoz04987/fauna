@@ -33,7 +33,7 @@ class TestRunner(unittest.TestCase):
         # DFA según SU constructor real
         self.dfa = DFA(
             name="test_dfa",
-            alphabet={"a", "b"},
+            alphabet=["a", "b"],
             states=states,
             transitions=transitions,
             start_state="q0"
