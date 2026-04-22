@@ -53,16 +53,16 @@ Abrir el cmd y entrar a la ruta de la carpeta.
   cd C:\Users\...\...\fauna-main
 
 ## Instalación
-1. Crear un entorno virtual
+1. Crear un entorno virtual  
    python -m venv venv
 
-2. Activar el entorno virtual
+3. Activar el entorno virtual
    venv\Scripts\activate
 
-3. Instalar dependencias
+4. Instalar dependencias
    pip install -r requirements.txt
 
-4. Instalar Graphviz
+5. Instalar Graphviz
    Descargar e instalar Graphviz desde su página oficial.
 
 ## Ejecución
