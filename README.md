@@ -47,22 +47,23 @@ fauna/
 
 ## Cómo ejecutar
 
-Descargar el proyecto y asegurarse de tener la carpeta fauna en tu computadora.
+1. Descargar el proyecto y asegurarse de tener la carpeta fauna en tu computadora.
 
-Abrir el cmd y entrar a la ruta de la carpeta.
-  cd C:\Users\...\...\fauna-main
+2. Abrir el cmd y entrar a la ruta de la carpeta.  
+   cd C:\Users\...\...\fauna-main
 
 ## Instalación
+
 1. Crear un entorno virtual  
    python -m venv venv
 
-3. Activar el entorno virtual  
+2. Activar el entorno virtual  
    venv\Scripts\activate
 
-5. Instalar dependencias  
+3. Instalar dependencias  
    pip install -r requirements.txt
 
-6. Instalar Graphviz  
+4. Instalar Graphviz  
    Descargar e instalar Graphviz desde su página oficial.
 
 ## Ejecución
@@ -79,12 +80,12 @@ Si la ejecución es correcta, se debe generar un archivo .png en la carpeta exam
 ### Uso de herramientas externas e IA
 
 ### Librerías externas
-- graphviz: utilizada para generar la representación gráfica del DFA en formato PNG.
+- Graphviz: Utilizada para generar la representación gráfica del DFA en formato PNG.
 
 ### Uso de inteligencia artificial
-Se utilizo inteligenci artificial como apoyo para el desarrollo de los siguientes aspectos del SPEC:
+Se utilizó inteligencia artificial como apoyo para el desarrollo de los siguientes aspectos del SPEC:
 
 - Orientación sobre la distribución del código entre los distintos archivos del proyecto (`model.py`, `runner.py`, `fauna_main.py`, etc.), de acuerdo a la estructura solicitada en el SPEC.
 - Corrección de errores y dudas puntuales durante la implementación.
 
-El codigo fue totalmente comprendido por los integrantes del grupo y son capaces de defender la composicion del mismo.
+El codigo fue totalmente comprendido por los integrantes del grupo y son capaces de defender la composición del mismo.
