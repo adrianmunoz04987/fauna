@@ -28,7 +28,20 @@ Luego construye el autómata utilizando Graphviz.
 ---
 ## Estructura del Proyecto
 ```
-fauna/ ├── src/dfa/ │ ├── model.py # Representación del DFA │ ├── runner.py # Lógica de ejecución │ ├── analysis.py # Funciones básicas de análisis │ ├── compiler.py # Procesamiento del autómata │ └── fauna_main.py # Archivo principal ├── examples/ # Ejemplos de DFAs en JSON ├── tests/ # Pruebas del sistema ├── docs/ # Documentación del sprint ├── html/ # Documentación generada ├── README.md ├── requirements.txt └── .gitignore
+fauna/
+├── src/dfa/
+│   ├── model.py        # Representación del DFA
+│   ├── runner.py       # Lógica de ejecución
+│   ├── analysis.py     # Funciones básicas de análisis
+│   ├── compiler.py     # Procesamiento del autómata
+│   └── fauna_main.py   # Archivo principal
+├── examples/           # Ejemplos de DFAs en JSON
+├── tests/              # Pruebas del sistema
+├── docs/               # Documentación del sprint
+├── html/               # Documentación generada
+├── README.md
+├── requirements.txt
+└── .gitignore
 ```
 ---
 
@@ -60,8 +73,6 @@ Desde la raíz del proyecto ejecutar
 ## Resultado
 
 Si la ejecución es correcta, se debe generar un archivo .png en la carpeta examples con la visualizacion del autómata.
-
----
 
 ### Uso de herramientas externas e IA
 
