@@ -1,8 +1,8 @@
 # Proyecto DFA - FAuna
 
 ## Curso
-EIF 203 - Estructuras Discretas
-Universidad Nacional (UNA)
+EIF 203 - Estructuras Discretas  
+Universidad Nacional (UNA)  
 Semestre I, 2026
 
 ## Integrantes
@@ -56,23 +56,25 @@ Abrir el cmd y entrar a la ruta de la carpeta.
 1. Crear un entorno virtual  
    python -m venv venv
 
-3. Activar el entorno virtual
+3. Activar el entorno virtual  
    venv\Scripts\activate
 
-4. Instalar dependencias
+5. Instalar dependencias  
    pip install -r requirements.txt
 
-5. Instalar Graphviz
+6. Instalar Graphviz  
    Descargar e instalar Graphviz desde su página oficial.
 
 ## Ejecución
 
-Desde la raíz del proyecto ejecutar
+Desde la raíz del proyecto ejecutar  
   python src\dfa\fauna_main.py examples\dfa2.json
 
 ## Resultado
 
 Si la ejecución es correcta, se debe generar un archivo .png en la carpeta examples con la visualizacion del autómata.
+
+---
 
 ### Uso de herramientas externas e IA
 
