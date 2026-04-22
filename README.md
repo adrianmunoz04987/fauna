@@ -71,16 +71,27 @@ fauna/
 Desde la raíz del proyecto ejecutar  
   python src\dfa\fauna_main.py examples\dfa2.json
 
+Para ejecutar una cadena sobre el DFA, se agrega como segundo argumento:  
+python src\dfa\fauna_main.py examples\dfa2.json aab
+
+El programa genera la imagen y además indica si la cadena es ACEPTADA o RECHAZADA.
+
+## Pruebas
+
+Para correr las pruebas unitarias, desde la raíz del proyecto:  
+python -m unittest tests.test_model  
+python -m unittest tests.test_runner
+
 ## Resultado
 
 Si la ejecución es correcta, se debe generar un archivo .png en la carpeta examples con la visualizacion del autómata.
 
 ---
 
-### Uso de herramientas externas e IA
-
 ### Librerías externas
 - Graphviz: Utilizada para generar la representación gráfica del DFA en formato PNG.
+
+---
 
 ### Uso de inteligencia artificial
 Se utilizó inteligencia artificial como apoyo para el desarrollo de los siguientes aspectos del SPEC:
@@ -88,4 +99,4 @@ Se utilizó inteligencia artificial como apoyo para el desarrollo de los siguien
 - Orientación sobre la distribución del código entre los distintos archivos del proyecto (`model.py`, `runner.py`, `fauna_main.py`, etc.), de acuerdo a la estructura solicitada en el SPEC.
 - Corrección de errores y dudas puntuales durante la implementación.
 
-El codigo fue totalmente comprendido por los integrantes del grupo y son capaces de defender la composición del mismo.
+El código fue totalmente comprendido por los integrantes del grupo y son capaces de defender la composición del mismo.
