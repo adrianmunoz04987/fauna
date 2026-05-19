@@ -1,6 +1,6 @@
 {
   "name": "contador_hola",
-  "alphabet": [["a", "b", "h", "o", "l"]],
+  "alphabet": ["a", "b", "h", "o", "l"],
   "start_state": "Esperando h",
   "states": [
     {"id": "Esperando h", "accepting": false},
@@ -14,25 +14,30 @@
     {"from": "Esperando h", "symbol": "a", "to": "Esperando h"},
     {"from": "Esperando h", "symbol": "b", "to": "Esperando h"},
     {"from": "Esperando h", "symbol": "o", "to": "Esperando h"},
+    {"from": "Esperando h", "symbol": "l", "to": "Esperando h"},
 
     {"from": "Llego h \nEsperando o", "symbol": "h", "to": "Llego h \nEsperando o"},
     {"from": "Llego h \nEsperando o", "symbol": "o", "to": "Llego o \nEsperando l"},
     {"from": "Llego h \nEsperando o", "symbol": "a", "to": "Esperando h"},
     {"from": "Llego h \nEsperando o", "symbol": "b", "to": "Esperando h"},
+    {"from": "Llego h \nEsperando o", "symbol": "l", "to": "Esperando h"},
 
     {"from": "Llego o \nEsperando l", "symbol": "l", "to": "Llego l \nEsperando a"},
     {"from": "Llego o \nEsperando l", "symbol": "h", "to": "Llego h \nEsperando o"},
     {"from": "Llego o \nEsperando l", "symbol": "a", "to": "Esperando h"},
     {"from": "Llego o \nEsperando l", "symbol": "b", "to": "Esperando h"},
+    {"from": "Llego o \nEsperando l", "symbol": "o", "to": "Esperando h"},
 
     {"from": "Llego l \nEsperando a", "symbol": "a", "to": "Llego a \nFormo hola"},
     {"from": "Llego l \nEsperando a", "symbol": "h", "to": "Llego h \nEsperando o"},
     {"from": "Llego l \nEsperando a", "symbol": "b", "to": "Esperando h"},
     {"from": "Llego l \nEsperando a", "symbol": "o", "to": "Esperando h"},
+    {"from": "Llego l \nEsperando a", "symbol": "l", "to": "Esperando h"},
 
     {"from": "Llego a \nFormo hola", "symbol": "a", "to": "Llego a \nFormo hola"},
     {"from": "Llego a \nFormo hola", "symbol": "b", "to": "Llego a \nFormo hola"},
     {"from": "Llego a \nFormo hola", "symbol": "h", "to": "Llego a \nFormo hola"},
-    {"from": "Llego a \nFormo hola", "symbol": "o", "to": "Llego a \nFormo hola"}
+    {"from": "Llego a \nFormo hola", "symbol": "o", "to": "Llego a \nFormo hola"},
+    {"from": "Llego a \nFormo hola", "symbol": "l", "to": "Llego a \nFormo hola"}
   ]
 }
