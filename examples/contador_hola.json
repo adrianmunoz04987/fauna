@@ -1,43 +1,38 @@
 {
   "name": "contador_hola",
-  "alphabet": ["a", "b", "h", "o", "l", "x", "i", "s", "n", "f", "e"],
-  "start_state": "q0",
+  "alphabet": [["a", "b", "h", "o", "l"]],
+  "start_state": "Esperando h",
   "states": [
-    {"id": "q0", "accepting": false},
-    {"id": "q1", "accepting": false},
-    {"id": "q2", "accepting": false},
-    {"id": "q3", "accepting": false},
-    {"id": "q4", "accepting": true}
+    {"id": "Esperando h", "accepting": false},
+    {"id": "Llego h \nEsperando o", "accepting": false},
+    {"id": "Llego o \nEsperando l", "accepting": false},
+    {"id": "Llego l \nEsperando a", "accepting": false},
+    {"id": "Llego a \nFormo hola", "accepting": true}
   ],
   "transitions": [
-    {"from": "q0", "symbol": "h", "to": "q1"},
-    {"from": "q0", "symbol": "a", "to": "q0"},
-    {"from": "q0", "symbol": "b", "to": "q0"},
-    {"from": "q0", "symbol": "o", "to": "q0"},
-    {"from": "q0", "symbol": "l", "to": "q0"},
+    {"from": "Esperando h", "symbol": "h", "to": "Llego h \nEsperando o"},
+    {"from": "Esperando h", "symbol": "a", "to": "Esperando h"},
+    {"from": "Esperando h", "symbol": "b", "to": "Esperando h"},
+    {"from": "Esperando h", "symbol": "o", "to": "Esperando h"},
 
-    {"from": "q1", "symbol": "h", "to": "q1"},
-    {"from": "q1", "symbol": "o", "to": "q2"},
-    {"from": "q1", "symbol": "a", "to": "q0"},
-    {"from": "q1", "symbol": "b", "to": "q0"},
-    {"from": "q1", "symbol": "l", "to": "q0"},
+    {"from": "Llego h \nEsperando o", "symbol": "h", "to": "Llego h \nEsperando o"},
+    {"from": "Llego h \nEsperando o", "symbol": "o", "to": "Llego o \nEsperando l"},
+    {"from": "Llego h \nEsperando o", "symbol": "a", "to": "Esperando h"},
+    {"from": "Llego h \nEsperando o", "symbol": "b", "to": "Esperando h"},
 
-    {"from": "q2", "symbol": "l", "to": "q3"},
-    {"from": "q2", "symbol": "h", "to": "q1"},
-    {"from": "q2", "symbol": "a", "to": "q0"},
-    {"from": "q2", "symbol": "b", "to": "q0"},
-    {"from": "q2", "symbol": "o", "to": "q0"},
+    {"from": "Llego o \nEsperando l", "symbol": "l", "to": "Llego l \nEsperando a"},
+    {"from": "Llego o \nEsperando l", "symbol": "h", "to": "Llego h \nEsperando o"},
+    {"from": "Llego o \nEsperando l", "symbol": "a", "to": "Esperando h"},
+    {"from": "Llego o \nEsperando l", "symbol": "b", "to": "Esperando h"},
 
-    {"from": "q3", "symbol": "a", "to": "q4"},
-    {"from": "q3", "symbol": "h", "to": "q1"},
-    {"from": "q3", "symbol": "b", "to": "q0"},
-    {"from": "q3", "symbol": "o", "to": "q0"},
-    {"from": "q3", "symbol": "l", "to": "q0"},
+    {"from": "Llego l \nEsperando a", "symbol": "a", "to": "Llego a \nFormo hola"},
+    {"from": "Llego l \nEsperando a", "symbol": "h", "to": "Llego h \nEsperando o"},
+    {"from": "Llego l \nEsperando a", "symbol": "b", "to": "Esperando h"},
+    {"from": "Llego l \nEsperando a", "symbol": "o", "to": "Esperando h"},
 
-    {"from": "q4", "symbol": "a", "to": "q4"},
-    {"from": "q4", "symbol": "b", "to": "q4"},
-    {"from": "q4", "symbol": "h", "to": "q4"},
-    {"from": "q4", "symbol": "o", "to": "q4"},
-    {"from": "q4", "symbol": "l", "to": "q4"}
+    {"from": "Llego a \nFormo hola", "symbol": "a", "to": "Llego a \nFormo hola"},
+    {"from": "Llego a \nFormo hola", "symbol": "b", "to": "Llego a \nFormo hola"},
+    {"from": "Llego a \nFormo hola", "symbol": "h", "to": "Llego a \nFormo hola"},
+    {"from": "Llego a \nFormo hola", "symbol": "o", "to": "Llego a \nFormo hola"}
   ]
 }
