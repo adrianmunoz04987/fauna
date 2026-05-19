@@ -72,7 +72,7 @@ Desde la raíz del proyecto ejecutar
   python src\dfa\fauna_main.py examples\contador_hola.json
 
 Para ejecutar una cadena sobre el DFA, se agrega como segundo argumento:  
-python src\dfa\fauna_main.py examples\contador_hola.json xiosnhola
+python src\dfa\fauna_main.py examples\contador_hola.json bhbohola
 
 El programa genera la imagen y además indica si la cadena es ACEPTADA o RECHAZADA.
 
