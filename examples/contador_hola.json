@@ -1,0 +1,43 @@
+{
+  "name": "contador_hola",
+  "alphabet": ["a", "b", "h", "o", "l", "x", "i", "s", "n", "f", "e"],
+  "start_state": "q0",
+  "states": [
+    {"id": "q0", "accepting": false},
+    {"id": "q1", "accepting": false},
+    {"id": "q2", "accepting": false},
+    {"id": "q3", "accepting": false},
+    {"id": "q4", "accepting": true}
+  ],
+  "transitions": [
+    {"from": "q0", "symbol": "h", "to": "q1"},
+    {"from": "q0", "symbol": "a", "to": "q0"},
+    {"from": "q0", "symbol": "b", "to": "q0"},
+    {"from": "q0", "symbol": "o", "to": "q0"},
+    {"from": "q0", "symbol": "l", "to": "q0"},
+
+    {"from": "q1", "symbol": "h", "to": "q1"},
+    {"from": "q1", "symbol": "o", "to": "q2"},
+    {"from": "q1", "symbol": "a", "to": "q0"},
+    {"from": "q1", "symbol": "b", "to": "q0"},
+    {"from": "q1", "symbol": "l", "to": "q0"},
+
+    {"from": "q2", "symbol": "l", "to": "q3"},
+    {"from": "q2", "symbol": "h", "to": "q1"},
+    {"from": "q2", "symbol": "a", "to": "q0"},
+    {"from": "q2", "symbol": "b", "to": "q0"},
+    {"from": "q2", "symbol": "o", "to": "q0"},
+
+    {"from": "q3", "symbol": "a", "to": "q4"},
+    {"from": "q3", "symbol": "h", "to": "q1"},
+    {"from": "q3", "symbol": "b", "to": "q0"},
+    {"from": "q3", "symbol": "o", "to": "q0"},
+    {"from": "q3", "symbol": "l", "to": "q0"},
+
+    {"from": "q4", "symbol": "a", "to": "q4"},
+    {"from": "q4", "symbol": "b", "to": "q4"},
+    {"from": "q4", "symbol": "h", "to": "q4"},
+    {"from": "q4", "symbol": "o", "to": "q4"},
+    {"from": "q4", "symbol": "l", "to": "q4"}
+  ]
+}
