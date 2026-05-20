@@ -28,6 +28,14 @@ class TestVisualization(unittest.TestCase):
         # Verifica que no esté vacío
         self.assertGreater(os.path.getsize("examples/contador_hola.png"), 0)
 
+    def test_png_generation_otro(self):
+        subprocess.run(
+            ["python", "src/dfa/fauna_main.py", "examples/contiene_101.json"],
+            check=True
+        )
+
+        self.assertTrue(os.path.exists("examples/contiene_101.png"))
+        self.assertGreater(os.path.getsize("examples/contiene_101.png"), 0)
 
 if __name__ == "__main__":
     unittest.main()
