@@ -41,6 +41,13 @@ class TestModel(unittest.TestCase):
         self.assertIn("a", dfa.alphabet)
         self.assertEqual(dfa.start_state, "q0")
 
+    def test_dfa_states_count(self):
+        states = [State("q0", False), State("q1", True)]
+        transitions = []
+
+        dfa = DFA("test", ["a"], states, transitions, "q0")
+
+        self.assertEqual(len(dfa.states), 2)
 
 if __name__ == "__main__":
     unittest.main()
