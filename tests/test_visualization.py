@@ -18,15 +18,15 @@ class TestVisualization(unittest.TestCase):
     def test_png_generation(self):
         # Ejecuta el programa principal
         subprocess.run(
-            ["python", "src/dfa/fauna_main.py", "examples/dfa2.json"],
+            ["python", "src/dfa/fauna_main.py", "examples/contador_hola.json"],
             check=True
         )
 
         # Verifica que el archivo PNG existe
-        self.assertTrue(os.path.exists("examples/dfa2.png"))
+        self.assertTrue(os.path.exists("examples/contador_hola.png"))
 
         # Verifica que no esté vacío
-        self.assertGreater(os.path.getsize("examples/dfa2.png"), 0)
+        self.assertGreater(os.path.getsize("examples/contador_hola.png"), 0)
 
 
 if __name__ == "__main__":
