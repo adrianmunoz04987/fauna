@@ -20,6 +20,15 @@ from runner import run_dfa
 
 
 def load_dfa(path):
+    """
+    Carga un DFA desde un archivo JSON.
+
+    :param path: Ruta al archivo JSON.
+    :type path: str
+    :returns: El DFA cargado.
+    :rtype: DFA
+    """
+
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -41,6 +50,15 @@ def load_dfa(path):
 
 
 def build_graph(dfa):
+    """
+    Construye un grafo visual a partir de un DFA.
+
+    :param dfa: El automata a visualizar.
+    :type dfa: DFA
+    :returns: El grafo generado.
+    :rtype: Digraph
+    """
+
     dot = Digraph()
 
 
@@ -62,12 +80,25 @@ def build_graph(dfa):
 
 
 def save_graph(graph, json_path):
+    """
+    Guarda el grafo como imagen PNG en disco.
+
+    :param graph: El grafo a guardar.
+    :type graph: Digraph
+    :param json_path: Ruta del archivo JSON original.
+    :type json_path: str
+    """
+
     output_path = json_path.replace(".json", "")
     graph.render(output_path, format="png", cleanup=True)
     print(f"Imagen generada: {output_path}.png")
 
 
 def main():
+    """
+    Funcion principal del programa.
+    """
+    
     if len(sys.argv) < 2 or len(sys.argv) > 3:
         print("Uso: python src\\dfa\\fauna_main.py <archivo_json>")
         return

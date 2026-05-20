@@ -10,6 +10,16 @@ Autores:
 """
 
 def run_dfa(dfa, cadena):
+    """
+    Ejecuta un DFA con una cadena de entrada.
+
+    :param dfa: El automata a ejecutar.
+    :type dfa: DFA
+    :param cadena: La cadena de entrada a procesar.
+    :type cadena: str
+    :returns: True si la cadena es aceptada, False si es rechazada.
+    :rtype: bool
+    """
     estado_actual = dfa.start_state
 
     for simbolo in cadena:
