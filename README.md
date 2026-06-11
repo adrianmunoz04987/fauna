@@ -52,6 +52,9 @@ fauna/
 2. Abrir el cmd y entrar a la ruta de la carpeta.  
    cd C:\Users\...\...\fauna-main
 
+3. Asegurarse de tener Python 3.13.x instalado. Para verificar:
+   python --version
+
 ## Instalación
 
 1. Crear un entorno virtual  
@@ -66,13 +69,15 @@ fauna/
 4. Instalar Graphviz  
    Descargar e instalar Graphviz desde su página oficial.
 
+5. Versión de Python recomendada: 3.13.x (requerida según el SPEC del curso)
+
 ## Ejecución
 
 Desde la raíz del proyecto ejecutar  
   python src\dfa\fauna_main.py examples\contador_hola.json
 
 Para ejecutar una cadena sobre el DFA, se agrega como segundo argumento:  
-python src\dfa\fauna_main.py examples\contador_hola.json bhbohola
+python src\dfa\fauna_main.py examples\contador_hola.json 
 
 El programa genera la imagen y además indica si la cadena es ACEPTADA o RECHAZADA.
 
@@ -93,7 +98,7 @@ Si la ejecución es correcta, se debe generar un archivo .png en la carpeta exam
 
 ---
 
-### Uso de inteligencia artificial
+### Declaración Jurada de uso de IA
 Se utilizó inteligencia artificial como apoyo para el desarrollo de los siguientes aspectos del SPEC:
 
 - Orientación sobre la distribución del código entre los distintos archivos del proyecto (`model.py`, `runner.py`, `fauna_main.py`, etc.), de acuerdo a la estructura solicitada en el SPEC.

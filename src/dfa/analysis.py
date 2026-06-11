@@ -10,6 +10,14 @@ Autores:
 """
 
 def is_complete(dfa):
+    """
+    Verifica si el DFA es completo en sus transiciones.
+
+    :param dfa: El automata a analizar.
+    :type dfa: DFA
+    :returns: True si es completo, False si faltan transiciones.
+    :rtype: bool
+    """
     for state in dfa.states:
         for symbol in dfa.alphabet:
             existe = False
@@ -23,6 +31,14 @@ def is_complete(dfa):
 
 
 def unreachable_states(dfa):
+    """
+    Retorna los estados inalcanzables del DFA.
+
+    :param dfa: El automata a analizar.
+    :type dfa: DFA
+    :returns: Lista de IDs de estados inalcanzables.
+    :rtype: list
+    """
     alcanzados = [dfa.start_state]
 
     for t in dfa.transitions:
@@ -35,6 +51,14 @@ def unreachable_states(dfa):
 
 
 def useless_states(dfa):
+    """
+    Retorna los estados inutiles del DFA.
+
+    :param dfa: El automata a analizar.
+    :type dfa: DFA
+    :returns: Lista de IDs de estados inutiles.
+    :rtype: list
+    """
     aceptacion = [s.id for s in dfa.states if s.accepting]
 
     utiles = aceptacion.copy()

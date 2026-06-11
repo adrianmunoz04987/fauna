@@ -17,6 +17,8 @@ import json
 from graphviz import Digraph
 from model import State, Transition, DFA
 from runner import run_dfa
+from analysis import is_complete, unreachable_states, useless_states
+import argparse
 
 
 def load_dfa(path):
@@ -98,25 +100,58 @@ def main():
     """
     Funcion principal del programa.
     """
-    
-    if len(sys.argv) < 2 or len(sys.argv) > 3:
-        print("Uso: python src\\dfa\\fauna_main.py <archivo_json>")
+
+    parser = argparse.ArgumentParser(description="FAuna - Herramienta para DFAs")
+    subparsers = parser.add_subparsers(dest="comando")
+
+    view_parser = subparsers.add_parser("view", help="Visualizar un DFA")
+    view_parser.add_argument("archivo", help="Ruta al archivo JSON del DFA")
+    view_parser.add_argument("--format", default="png", help="Formato de salida")
+
+    run_parser = subparsers.add_parser("run", help="Ejecutar un DFA con una cadena")
+    run_parser.add_argument("archivo", help="Ruta al archivo JSON del DFA")
+    run_parser.add_argument("--input", required=True, help="Cadena de entrada")
+
+    analize_parser = subparsers.add_parser("analize", help="Analizar un DFA")
+    analize_parser.add_argument("archivo", help="Ruta al archivo JSON del DFA")
+    analize_parser.add_argument("--complete", action="store_true", help="Verificar completitud")
+    analize_parser.add_argument("--unreachable", action="store_true", help="Ver estados inalcanzables")
+    analize_parser.add_argument("--useless", action="store_true", help="Ver estados inutiles")
+
+    args = parser.parse_args()
+
+    if args.comando is None:
+        parser.print_help()
         return
 
-    path = sys.argv[1]
-    dfa = load_dfa(path)
-    graph = build_graph(dfa)
-    save_graph(graph, path)
+    dfa = load_dfa(args.archivo)
 
-    if len(sys.argv) == 3:
-        cadena = sys.argv[2]
-        print(f"\nEjecutando DFA '{dfa.name}' con la cadena: '{cadena}'")
-        resultado = run_dfa(dfa, cadena)
+    if args.comando == "view":
+        graph = build_graph(dfa)
+        save_graph(graph, args.archivo)
+    elif args.comando == "run":
+        resultado = run_dfa(dfa, args.input)
         if resultado:
             print("Resultado: ACEPTADA")
         else:
             print("Resultado: RECHAZADA")
-
-
+    elif args.comando == "analize":
+        if args.complete:
+            if is_complete(dfa):
+                print("El DFA es completo.")
+            else:
+                print("El DFA NO es completo.")
+        if args.unreachable:
+            estados = unreachable_states(dfa)
+            if estados:
+                print(f"Estados inalcanzables: {estados}")
+            else:
+                print("No hay estados inalcanzables.")
+        if args.useless:
+            estados = useless_states(dfa)
+            if estados:
+                print(f"Estados inutiles: {estados}")
+            else:
+                print("No hay estados inutiles.")
 if __name__ == "__main__":
     main()
