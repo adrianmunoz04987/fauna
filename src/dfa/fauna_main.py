@@ -12,6 +12,7 @@ Autores:
 import os
 import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from compiler import compile_dfa, save_dfa
 
 import json
 from graphviz import Digraph
@@ -104,6 +105,10 @@ def main():
     parser = argparse.ArgumentParser(description="FAuna - Herramienta para DFAs")
     subparsers = parser.add_subparsers(dest="comando")
 
+    compile_parser = subparsers.add_parser("compile", help="Compilar DFA extendido")
+    compile_parser.add_argument("archivo", help="DFA extendido")
+    compile_parser.add_argument("--o", required=True, help="Archivo de salida")
+
     view_parser = subparsers.add_parser("view", help="Visualizar un DFA")
     view_parser.add_argument("archivo", help="Ruta al archivo JSON del DFA")
     view_parser.add_argument("--format", default="png", help="Formato de salida")
@@ -156,5 +161,12 @@ def main():
                 print(f"Estados inutiles: {estados}")
             else:
                 print("No hay estados inutiles.")
+    elif args.comando == "compile":
+
+        compilado = compile_dfa(dfa)
+
+        save_dfa(compilado, args.o)
+
+        print(f"DFA compilado guardado en {args.o}")
 if __name__ == "__main__":
     main()
