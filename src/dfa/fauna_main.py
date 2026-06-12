@@ -137,10 +137,13 @@ def main():
             print("Resultado: RECHAZADA")
     elif args.comando == "analize":
         if args.complete:
-            if is_complete(dfa):
+            faltantes = is_complete(dfa)
+            if not faltantes:
                 print("El DFA es completo.")
             else:
-                print("El DFA NO es completo.")
+                print("El DFA NO es completo. Transiciones faltantes: ")
+                for f in faltantes:
+                    print(f)
         if args.unreachable:
             estados = unreachable_states(dfa)
             if estados:

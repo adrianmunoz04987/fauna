@@ -37,7 +37,8 @@ class TestAnalysis(unittest.TestCase):
         )
 
     def test_is_complete(self):
-        self.assertFalse(is_complete(self.dfa))
+        faltantes = is_complete(self.dfa)
+        self.assertGreater(len(faltantes), 0)
 
     def test_unreachable_states(self):
         result = unreachable_states(self.dfa)

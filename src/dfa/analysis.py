@@ -15,9 +15,10 @@ def is_complete(dfa):
 
     :param dfa: El automata a analizar.
     :type dfa: DFA
-    :returns: True si es completo, False si faltan transiciones.
-    :rtype: bool
+    :returns: Lista de transiciones faltantes, vacia si es completo.
+    :rtype: list
     """
+    faltantes = []
     for state in dfa.states:
         for symbol in dfa.alphabet:
             existe = False
@@ -26,8 +27,8 @@ def is_complete(dfa):
                     existe = True
                     break
             if not existe:
-                return False
-    return True
+                faltantes.append(f"({state.id}, {symbol})")
+    return faltantes
 
 
 def unreachable_states(dfa):
