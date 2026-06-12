@@ -1,0 +1,22 @@
+{
+  "name": "dfa_dot",
+  "alphabet": [],
+  "start_state": "q0",
+  "states": [
+    {
+      "id": "q0",
+      "accepting": false
+    },
+    {
+      "id": "q1",
+      "accepting": true
+    }
+  ],
+  "transitions": [
+    {
+      "from": "q0",
+      "symbol": ".",
+      "to": "q1"
+    }
+  ]
+}

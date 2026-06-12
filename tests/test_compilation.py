@@ -64,5 +64,119 @@ class TestCompiler(unittest.TestCase):
             simbolos,
             ['0','1','2','3','4','5','6','7','8','9']
         )
+
+    def test_compile_dot(self):
+
+        states = [
+            State("q0", False),
+            State("q1", True)
+        ]
+
+        transitions = [
+            Transition("q0", ".", "q1")
+        ]
+
+        dfa = DFA(
+            "test",
+            [],
+            states,
+            transitions,
+            "q0"
+        )
+
+        compilado = compile_dfa(dfa)
+
+        self.assertEqual(
+            len(compilado.transitions),
+            len(VOCABULARIO)
+        )
+
+    def test_compile_rango_positivo(self):
+
+        states = [
+            State("q0", False),
+            State("q1", True)
+        ]
+
+        transitions = [
+            Transition("q0", "[a-z]", "q1")
+        ]
+
+        dfa = DFA(
+            "test",
+            [],
+            states,
+            transitions,
+            "q0"
+        )
+
+        compilado = compile_dfa(dfa)
+
+        simbolos = [t.symbol for t in compilado.transitions]
+
+        self.assertIn("a", simbolos)
+        self.assertIn("z", simbolos)
+
+        self.assertEqual(
+            len(simbolos),
+            26
+        )
+
+    def test_compile_rango_negativo(self):
+
+        states = [
+            State("q0", False),
+            State("q1", True)
+        ]
+
+        transitions = [
+            Transition("q0", "[^a-z]", "q1")
+        ]
+
+        dfa = DFA(
+            "test",
+            [],
+            states,
+            transitions,
+            "q0"
+        )
+
+        compilado = compile_dfa(dfa)
+
+        simbolos = [t.symbol for t in compilado.transitions]
+
+        self.assertNotIn("a", simbolos)
+        self.assertNotIn("z", simbolos)
+
+        self.assertIn("0", simbolos)
+
+    def test_compile_union(self):
+
+        states = [
+            State("q0", False),
+            State("q1", True)
+        ]
+
+        transitions = [
+            Transition("q0", "[a-z]|\\d", "q1")
+        ]
+
+        dfa = DFA(
+            "test",
+            [],
+            states,
+            transitions,
+            "q0"
+        )
+
+        compilado = compile_dfa(dfa)
+
+        simbolos = [t.symbol for t in compilado.transitions]
+
+        self.assertIn("a", simbolos)
+        self.assertIn("z", simbolos)
+        self.assertIn("0", simbolos)
+        self.assertIn("9", simbolos)
+
 if __name__ == "__main__":
     unittest.main()
