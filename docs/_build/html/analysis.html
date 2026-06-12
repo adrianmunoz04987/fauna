@@ -15,6 +15,8 @@
     <script src="_static/translations.js?v=f85f4cfb"></script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="compiler module" href="compiler.html" />
+    <link rel="prev" title="dfa" href="modules.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -34,6 +36,66 @@
             
   <section id="module-analysis">
 <span id="analysis-module"></span><h1>analysis module<a class="headerlink" href="#module-analysis" title="Link to this heading">¶</a></h1>
+<p>EIF203 Estructuras Discretas - Semestre I, 2026
+Universidad Nacional</p>
+<dl class="simple">
+<dt>Autores:</dt><dd><p>Adrian Muñoz Cisneros
+Marco Vinicio Coto Dall” Anesse
+Gabriel Chavarria Barquero
+Joao Arauz Rodriguez</p>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="analysis.is_complete">
+<span class="sig-prename descclassname"><span class="pre">analysis.</span></span><span class="sig-name descname"><span class="pre">is_complete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.is_complete" title="Link to this definition">¶</a></dt>
+<dd><p>Verifica si el DFA es completo en sus transiciones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El automata a analizar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>True si es completo, False si faltan transiciones.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="analysis.unreachable_states">
+<span class="sig-prename descclassname"><span class="pre">analysis.</span></span><span class="sig-name descname"><span class="pre">unreachable_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.unreachable_states" title="Link to this definition">¶</a></dt>
+<dd><p>Retorna los estados inalcanzables del DFA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El automata a analizar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lista de IDs de estados inalcanzables.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="analysis.useless_states">
+<span class="sig-prename descclassname"><span class="pre">analysis.</span></span><span class="sig-name descname"><span class="pre">useless_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.useless_states" title="Link to this definition">¶</a></dt>
+<dd><p>Retorna los estados inutiles del DFA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El automata a analizar.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lista de IDs de estados inutiles.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
@@ -62,11 +124,26 @@
     </div>
 </search>
 <script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegación</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">dfa</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">analysis module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html">compiler module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fauna_main.html">fauna_main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html">model module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="runner.html">runner module</a></li>
+</ul>
+</li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">dfa</a><ul>
+      <li>Previous: <a href="modules.html" title="capítulo anterior">dfa</a></li>
+      <li>Next: <a href="compiler.html" title="próximo capítulo">compiler module</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
