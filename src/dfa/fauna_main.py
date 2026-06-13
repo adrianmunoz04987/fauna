@@ -115,7 +115,8 @@ def main():
 
     run_parser = subparsers.add_parser("run", help="Ejecutar un DFA con una cadena")
     run_parser.add_argument("archivo", help="Ruta al archivo JSON del DFA")
-    run_parser.add_argument("--input", required=True, help="Cadena de entrada")
+    run_parser.add_argument("--input", help="Cadena de entrada")
+    run_parser.add_argument("--range", help="Archivo con cadenas, una por linea")
 
     analize_parser = subparsers.add_parser("analize", help="Analizar un DFA")
     analize_parser.add_argument("archivo", help="Ruta al archivo JSON del DFA")
@@ -135,11 +136,26 @@ def main():
         graph = build_graph(dfa)
         save_graph(graph, args.archivo)
     elif args.comando == "run":
-        resultado = run_dfa(dfa, args.input)
-        if resultado:
-            print("Resultado: ACEPTADA")
+        if args.range:
+            with open(args.range, "r", encoding="utf-8") as f:
+                cadenas = f.readlines()
+            for cadena in cadenas:
+                cadena = cadena.strip()
+                if cadena == "":
+                    continue
+                print(f"Probando: {cadena}")
+                resultado = run_dfa(dfa, cadena)
+                if resultado:
+                    print("Resultado: ACEPTADA")
+                else:
+                    print("Resultado: RECHAZADA")
+                print("---")
         else:
-            print("Resultado: RECHAZADA")
+            resultado = run_dfa(dfa, args.input)
+            if resultado:
+                print("Resultado: ACEPTADA")
+            else:
+                print("Resultado: RECHAZADA")
         print("Tracing guardado en fauna_run.log")
     elif args.comando == "analize":
         if args.complete:

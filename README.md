@@ -91,6 +91,9 @@ El programa acepta 4 comandos: `view`, `run`, `analize` y `compile`.  Todos los 
 
 Muestra cada transición (tracing) e indica si la cadena es ACEPTADA o RECHAZADA.
 
+**Ejecutar un DFA con un rango de cadenas (archivo con una cadena por línea):**
+
+    python src\dfa\fauna_main.py run --range cadenas.txt examples\contador_hola.json
 **Analizar completitud:**
 
     python src\dfa\fauna_main.py analize --complete examples\contador_hola.json
@@ -134,8 +137,8 @@ O individualmente:
     python -m unittest tests.test_model
     python -m unittest tests.test_runner
     python -m unittest tests.test_analyser
-    python -m unittest tests.test_visualization
-    python -m unittest tests.test_compilation
+    python -m unittest tests.test_visualiser
+    python -m unittest tests.test_compiler
     python -m unittest tests.test_performance
 
 ---
