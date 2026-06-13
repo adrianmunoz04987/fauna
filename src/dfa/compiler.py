@@ -106,7 +106,14 @@ def compile_dfa(dfa: DFA) -> DFA:
     )
 
 def save_dfa(dfa: DFA, output_path: str):
+    """
+    Guarda un DFA compilado en un archivo JSON.
 
+    :param dfa: El DFA a guardar.
+    :type dfa: DFA
+    :param output_path: Ruta del archivo de salida.
+    :type output_path: str
+    """
     data = {
         "name": dfa.name,
         "alphabet": dfa.alphabet,
