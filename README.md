@@ -77,7 +77,9 @@ El modelo es totalmente propio (sin automata-lib para la lógica) e implementado
 
 ## Ejecución
 
-Todos los comandos se ejecutan desde la raíz del proyecto.
+### Comandos disponibles
+
+El programa acepta 4 comandos: `view`, `run`, `analize` y `compile`.  Todos los comandos se ejecutan desde la raíz del proyecto.
 
 **Visualizar un DFA (genera PNG):**
 
