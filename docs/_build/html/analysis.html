@@ -45,19 +45,24 @@ Gabriel Chavarria Barquero
 Joao Arauz Rodriguez</p>
 </dd>
 </dl>
+<p>Modulo que implementa las funciones de analisis de un DFA:
+completitud, estados inalcanzables y estados inutiles.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="analysis.is_complete">
 <span class="sig-prename descclassname"><span class="pre">analysis.</span></span><span class="sig-name descname"><span class="pre">is_complete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.is_complete" title="Link to this definition">¶</a></dt>
-<dd><p>Verifica si el DFA es completo en sus transiciones.</p>
+<dd><p>Verifica si el DFA es completo en sus transiciones.
+Un DFA es completo si para cada estado existe una transicion
+definida para cada simbolo del alfabeto.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El automata a analizar.</p>
 </dd>
 <dt class="field-even">Devuelve<span class="colon">:</span></dt>
-<dd class="field-even"><p>True si es completo, False si faltan transiciones.</p>
+<dd class="field-even"><p>Lista de transiciones faltantes como cadenas “(estado, simbolo)”,
+vacia si el DFA es completo.</p>
 </dd>
 <dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
 </dd></dl>
@@ -65,7 +70,9 @@ Joao Arauz Rodriguez</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="analysis.unreachable_states">
 <span class="sig-prename descclassname"><span class="pre">analysis.</span></span><span class="sig-name descname"><span class="pre">unreachable_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.unreachable_states" title="Link to this definition">¶</a></dt>
-<dd><p>Retorna los estados inalcanzables del DFA.</p>
+<dd><p>Retorna los estados inalcanzables del DFA usando BFS desde el estado inicial.
+Un estado es inalcanzable si no existe ningun camino desde el estado
+inicial que llegue a el.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El automata a analizar.</p>
@@ -82,7 +89,9 @@ Joao Arauz Rodriguez</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="analysis.useless_states">
 <span class="sig-prename descclassname"><span class="pre">analysis.</span></span><span class="sig-name descname"><span class="pre">useless_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analysis.useless_states" title="Link to this definition">¶</a></dt>
-<dd><p>Retorna los estados inutiles del DFA.</p>
+<dd><p>Retorna los estados inutiles del DFA.
+Un estado es inutile si no existe ningun camino desde ese estado
+hasta algun estado de aceptacion.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parámetros<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El automata a analizar.</p>

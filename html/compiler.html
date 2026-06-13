@@ -36,6 +36,67 @@
             
   <section id="module-compiler">
 <span id="compiler-module"></span><h1>compiler module<a class="headerlink" href="#module-compiler" title="Link to this heading">¶</a></h1>
+<p>EIF203 Estructuras Discretas - Semestre I, 2026
+Universidad Nacional</p>
+<dl class="simple">
+<dt>Autores:</dt><dd><p>Adrian Muñoz Cisneros
+Marco Vinicio Coto Dall” Anesse
+Gabriel Chavarria Barquero
+Joao Arauz Rodriguez</p>
+</dd>
+</dl>
+<p>Modulo que implementa el compilador de DFA extendido a DFA estandar.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="compiler.compile_dfa">
+<span class="sig-prename descclassname"><span class="pre">compiler.</span></span><span class="sig-name descname"><span class="pre">compile_dfa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model.html#model.DFA" title="model.DFA"><span class="pre">DFA</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="model.html#model.DFA" title="model.DFA"><span class="pre">DFA</span></a></span></span><a class="headerlink" href="#compiler.compile_dfa" title="Link to this definition">¶</a></dt>
+<dd><p>Convierte un DFA extendido en un DFA estándar.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – DFA con transiciones SRE.</p>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>DFA compilado.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="model.html#model.DFA" title="model.DFA">DFA</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compiler.parse_sre">
+<span class="sig-prename descclassname"><span class="pre">compiler.</span></span><span class="sig-name descname"><span class="pre">parse_sre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">V</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#compiler.parse_sre" title="Link to this definition">¶</a></dt>
+<dd><p>Parsea una expresion regular simple (SRE) y devuelve la lista de caracteres que representa.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>V</strong> (<em>list</em>) – Vocabulario de caracteres validos.</p></li>
+<li><p><strong>input</strong> (<em>str</em>) – La expresion regular a parsear.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lista de caracteres que la SRE denota.</p>
+</dd>
+<dt class="field-odd">Tipo del valor devuelto<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="compiler.save_dfa">
+<span class="sig-prename descclassname"><span class="pre">compiler.</span></span><span class="sig-name descname"><span class="pre">save_dfa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model.html#model.DFA" title="model.DFA"><span class="pre">DFA</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#compiler.save_dfa" title="Link to this definition">¶</a></dt>
+<dd><p>Guarda un DFA compilado en un archivo JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dfa</strong> (<a class="reference internal" href="model.html#model.DFA" title="model.DFA"><em>DFA</em></a>) – El DFA a guardar.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Ruta del archivo de salida.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
