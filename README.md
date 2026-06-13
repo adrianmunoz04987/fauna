@@ -15,93 +15,146 @@ Semestre I, 2026
 
 ## Descripción
 
-En este proyecto se desarrolló una aplicación de consola de Python, consiste en un programa que permite leer un autómata finito determinista (DFA) desde un archivo en formato JSON y generar una representación gráfica en formato PNG.
+FAuna es una aplicación de consola en Python que permite trabajar con Autómatas Finitos Deterministas (DFA). A partir de un archivo JSON que define el autómata, el programa puede:
 
-El programa procesa: 
-- Los estados.
-- El estado inicial.
-- Los estados de aceptación.
-- Las transiciones.
+- **Visualizar** el DFA como imagen PNG usando Graphviz.
+- **Ejecutar** (run) el DFA con una cadena de entrada, mostrando cada transición (tracing).
+- **Analizar** el DFA: verificar completitud, encontrar estados inalcanzables y estados inútiles.
+- **Compilar** un DFA extendido (con expresiones regulares en transiciones) a un DFA estándar.
 
-Luego construye el autómata utilizando Graphviz.
+El modelo es totalmente propio (sin automata-lib para la lógica) e implementado con POO en Python 3.13.
 
 ---
+
 ## Estructura del Proyecto
-```
-fauna/
-├── src/dfa/
-│   ├── model.py        # Representación del DFA
-│   ├── runner.py       # Lógica de ejecución
-│   ├── analysis.py     # Funciones básicas de análisis
-│   ├── compiler.py     # Procesamiento del autómata
-│   └── fauna_main.py   # Archivo principal
-├── examples/           # Ejemplos de DFAs en JSON
-├── tests/              # Pruebas del sistema
-├── docs/               # Documentación del sprint
-├── html/               # Documentación generada
-├── README.md
-├── requirements.txt
-└── .gitignore
-```
+
+    fauna/
+    ├── src/dfa/
+    │   ├── model.py        # Clases State, Transition, DFA
+    │   ├── runner.py       # Ejecucion con tracing
+    │   ├── analysis.py     # Completitud, inalcanzables, inutiles
+    │   ├── compiler.py     # Compilador DFA extendido -> estandar
+    │   └── fauna_main.py   # CLI principal (view, run, analize, compile)
+    ├── tests/
+    │   ├── test_model.py
+    │   ├── test_runner.py
+    │   ├── test_analyser.py
+    │   ├── test_visualization.py
+    │   ├── test_compilation.py
+    │   └── test_performance.py
+    ├── docs/
+    │   ├── sprint_1_spec.md
+    │   └── sprint_2_spec.md
+    ├── html/
+    ├── examples/
+    ├── README.md
+    ├── requirements.txt
+    └── .gitignore
+
 ---
-
-## Cómo ejecutar
-
-1. Descargar el proyecto y asegurarse de tener la carpeta fauna en tu computadora.
-
-2. Abrir el cmd y entrar a la ruta de la carpeta.  
-   cd C:\Users\...\...\fauna-main
-
-3. Asegurarse de tener Python 3.13.x instalado. Para verificar:
-   python --version
 
 ## Instalación
 
-1. Crear un entorno virtual  
-   python -m venv venv
+1. Asegurarse de tener Python 3.13.x instalado:
 
-2. Activar el entorno virtual  
-   venv\Scripts\activate
+       python --version
 
-3. Instalar dependencias  
-   pip install -r requirements.txt
+2. Crear un entorno virtual:
 
-4. Instalar Graphviz  
-   Descargar e instalar Graphviz desde su página oficial.
+       python -m venv venv
 
-5. Versión de Python recomendada: 3.13.x (requerida según el SPEC del curso)
+3. Activar el entorno virtual:
+
+       venv\Scripts\activate
+
+4. Instalar dependencias:
+
+       pip install -r requirements.txt
+
+5. Instalar Graphviz desde su página oficial y agregar al PATH.
+
+---
 
 ## Ejecución
 
-Desde la raíz del proyecto ejecutar  
-  python src\dfa\fauna_main.py examples\contador_hola.json
+Todos los comandos se ejecutan desde la raíz del proyecto.
 
-Para ejecutar una cadena sobre el DFA, se agrega como segundo argumento:  
-python src\dfa\fauna_main.py examples\contador_hola.json 
+**Visualizar un DFA (genera PNG):**
 
-El programa genera la imagen y además indica si la cadena es ACEPTADA o RECHAZADA.
+    python src\dfa\fauna_main.py view --format png examples\contador_hola.json
+
+**Ejecutar un DFA con una cadena:**
+
+    python src\dfa\fauna_main.py run --input hola examples\contador_hola.json
+
+Muestra cada transición (tracing) e indica si la cadena es ACEPTADA o RECHAZADA.
+
+**Analizar completitud:**
+
+    python src\dfa\fauna_main.py analize --complete examples\contador_hola.json
+
+**Ver estados inalcanzables:**
+
+    python src\dfa\fauna_main.py analize --unreachable examples\contador_hola.json
+
+**Ver estados inútiles:**
+
+    python src\dfa\fauna_main.py analize --useless examples\contador_hola.json
+
+**Compilar un DFA extendido a estándar:**
+
+    python src\dfa\fauna_main.py compile examples\dfa_extendido.json --o examples\dfa_compilado.json
+
+---
+
+## Expresiones regulares soportadas en transiciones
+
+| Expresión | Descripción                        |
+|-----------|------------------------------------|
+| .         | Cualquier carácter del vocabulario |
+| \d        | Dígitos 0-9                        |
+| \s        | Espacios en blanco                 |
+| \w        | Letras a-z y A-Z                   |
+| [a-z]     | Rango de caracteres                |
+| [^a-z]    | Negación de rango                  |
+| x\|y      | Unión de dos expresiones           |
+
+---
 
 ## Pruebas
 
-Para correr las pruebas unitarias, desde la raíz del proyecto:  
-python -m unittest tests.test_model  
-python -m unittest tests.test_runner
+Ejecutar todos los tests desde la raíz del proyecto:
 
-## Resultado
+    python -m unittest discover tests
 
-Si la ejecución es correcta, se debe generar un archivo .png en la carpeta examples con la visualizacion del autómata.
+O individualmente:
+
+    python -m unittest tests.test_model
+    python -m unittest tests.test_runner
+    python -m unittest tests.test_analyser
+    python -m unittest tests.test_visualization
+    python -m unittest tests.test_compilation
+    python -m unittest tests.test_performance
 
 ---
 
-### Librerías externas
-- Graphviz: Utilizada para generar la representación gráfica del DFA en formato PNG.
+## Librerías externas
+
+- **graphviz**: Generación de visualizaciones PNG del DFA.
+- **argparse**: Manejo de comandos y opciones (librería estándar de Python).
+- **logging**: Tracing durante la ejecución (librería estándar de Python).
+
+No se utiliza automata-lib ni ninguna otra librería externa para la lógica del DFA.
 
 ---
 
-### Declaración Jurada de uso de IA
+## Declaración Jurada de uso de IA
+
 Se utilizó inteligencia artificial como apoyo para el desarrollo de los siguientes aspectos del SPEC:
 
-- Orientación sobre la distribución del código entre los distintos archivos del proyecto (`model.py`, `runner.py`, `fauna_main.py`, etc.), de acuerdo a la estructura solicitada en el SPEC.
+- Orientación sobre la distribución del código entre los distintos archivos del proyecto (model.py, runner.py, fauna_main.py, etc.), de acuerdo a la estructura solicitada en el SPEC.
 - Corrección de errores y dudas puntuales durante la implementación.
+- Corrección del algoritmo BFS para unreachable_states y useless_states en analysis.py.
+- Generación de test_analyser.py, test_performance.py y docs/sprint_2_spec.md.
 
 El código fue totalmente comprendido por los integrantes del grupo y son capaces de defender la composición del mismo.
