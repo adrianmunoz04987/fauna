@@ -140,6 +140,7 @@ def main():
             print("Resultado: ACEPTADA")
         else:
             print("Resultado: RECHAZADA")
+        print("Tracing guardado en fauna_run.log")
     elif args.comando == "analize":
         if args.complete:
             faltantes = is_complete(dfa)
