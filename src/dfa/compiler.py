@@ -97,9 +97,14 @@ def compile_dfa(dfa: DFA) -> DFA:
                 )
             )
 
+    alfabeto_compilado = []
+    for t in nuevas_transiciones:
+        if t.symbol not in alfabeto_compilado:
+            alfabeto_compilado.append(t.symbol)
+
     return DFA(
         name=dfa.name + "_compiled",
-        alphabet=VOCABULARIO,
+        alphabet=alfabeto_compilado,
         states=dfa.states,
         transitions=nuevas_transiciones,
         start_state=dfa.start_state

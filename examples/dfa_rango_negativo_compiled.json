@@ -1,0 +1,288 @@
+{
+  "name": "dfa_rango_negativo_compiled",
+  "alphabet": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    " ",
+    "\t",
+    "\n",
+    ".",
+    "\\",
+    "[",
+    "]",
+    "-",
+    "^"
+  ],
+  "start_state": "q0",
+  "states": [
+    {
+      "id": "q0",
+      "accepting": false
+    },
+    {
+      "id": "q1",
+      "accepting": true
+    }
+  ],
+  "transitions": [
+    {
+      "from": "q0",
+      "symbol": "A",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "B",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "C",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "D",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "E",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "F",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "G",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "H",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "I",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "J",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "K",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "L",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "M",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "N",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "O",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "P",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "Q",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "R",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "S",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "T",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "U",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "V",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "W",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "X",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "Y",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "Z",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "0",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "1",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "2",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "3",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "4",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "5",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "6",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "7",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "8",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "9",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": " ",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "\t",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "\n",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": ".",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "\\",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "[",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "]",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "-",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "^",
+      "to": "q1"
+    }
+  ]
+}

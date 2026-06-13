@@ -1,0 +1,174 @@
+{
+  "name": "dfa_rango_positivo_compiled",
+  "alphabet": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ],
+  "start_state": "q0",
+  "states": [
+    {
+      "id": "q0",
+      "accepting": false
+    },
+    {
+      "id": "q1",
+      "accepting": true
+    }
+  ],
+  "transitions": [
+    {
+      "from": "q0",
+      "symbol": "a",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "b",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "c",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "d",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "e",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "f",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "g",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "h",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "i",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "j",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "k",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "l",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "m",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "n",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "o",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "p",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "q",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "r",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "s",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "t",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "u",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "v",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "w",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "x",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "y",
+      "to": "q1"
+    },
+    {
+      "from": "q0",
+      "symbol": "z",
+      "to": "q1"
+    }
+  ]
+}
